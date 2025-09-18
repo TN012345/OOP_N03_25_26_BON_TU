@@ -6,7 +6,7 @@ Tên dự án: Xây dựng ứng dụng quản lý khu chung cư
 
 Nguyễn Anh Tú -
 
-Đinh Văn Bốn -
+Đinh Văn Bốn -22010067
 
 ## 2. Yêu cầu chính
 
