@@ -18,13 +18,13 @@ Mô tả: Hệ thống quản lý khu chung cư bao gồm các nhóm chức năn
 
 ## 3. Mô tả cụ thể
 
-Quản lý tài khoản:
+-Quản lý tài khoản:
 
 Đăng nhập, đăng xuất.
 
 Mã hóa mật khẩu SHA-256.
 
-Phân quyền tài khoản (admin, nhân viên, cư dân).
+-Phân quyền tài khoản (admin, nhân viên, cư dân).
 
 Quản lý cư dân:
 
