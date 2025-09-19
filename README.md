@@ -54,7 +54,7 @@ Quản lý dữ liệu:
 
 Sử dụng Collection (ArrayList, HashMap) để lưu trữ dữ liệu trong bộ nhớ.
 
-## 4. Objects (Đối tượng)
+## 4. Đối tượng
 4.1. Cư dân (CuDan)
 Attribute (Thuộc tính)
 - String maCuDan
@@ -108,7 +108,7 @@ Methods (Phương thức)
 - editNhanVien()
 - removeNhanVien()
 - display()
-##5. Sơ đồ UML
+## 5. Sơ đồ UML
 5.1 UML Class Diagram
 
 (ví dụ: vẽ bằng draw.io hoặc PlantUML và chèn ảnh)
