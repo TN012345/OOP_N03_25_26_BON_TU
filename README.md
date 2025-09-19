@@ -56,7 +56,7 @@ Sử dụng Collection (ArrayList, HashMap) để lưu trữ dữ liệu trong b
 
 ## 4. Objects (Đối tượng)
 
-4.1. Cư dân (CuDan)
+### 4.1. Cư dân (CuDan)
 
 Attribute (Thuộc tính)
 
@@ -82,8 +82,8 @@ Methods (Phương thức)
 
 - display()
 
-4.2. Căn hộ (CanHo)
-
+### 4.2. Căn hộ (CanHo)
+ 
 Attribute (Thuộc tính)
 
 - String maCanHo
@@ -104,7 +104,7 @@ Methods (Phương thức)
 
 - display()
 
-4.3. Tài khoản (TaiKhoan)
+### 4.3. Tài khoản (TaiKhoan)
 Attribute (Thuộc tính)
 
 - String username
@@ -123,7 +123,7 @@ Methods (Phương thức)
   
 - changePassword()
 
-4.4. Ban quản lý (BanQuanLy)
+### 4.4. Ban quản lý (BanQuanLy)
 
 Attribute (Thuộc tính)
 
