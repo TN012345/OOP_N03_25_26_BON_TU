@@ -2,7 +2,7 @@
 
 Tên dự án: Xây dựng ứng dụng quản lý khu chung cư
 
-## 1. Members (Thành viên dự án)
+## 1. Thành viên dự án
 
 Nguyễn Anh Tú -23010645
 
