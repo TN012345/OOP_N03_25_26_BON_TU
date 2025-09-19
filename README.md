@@ -246,8 +246,9 @@ MenuController --> User : hiển thị kết quả
 
 5.2.2 Chức năng xóa căn hộ
 
+<img width="1231" height="727" alt="Untitled" src="https://github.com/user-attachments/assets/4d589789-36c4-44b9-ad43-4e8a8e2d4e38" />?raw=true
 
-https://www.plantuml.com/plantuml/dual.html
+
 
 5.2.3 Chức năng đăng nhập tài khoản
 
