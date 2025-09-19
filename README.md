@@ -149,121 +149,16 @@ Methods (Phương thức)
   
 ## 5. Sơ đồ UML
 
-5.1 UML Class Diagram
-Sơ đồ lớp thể hiện mối quan hệ giữa các đối tượng trong hệ thống quản lý khu chung cư.
+### 5.1 UML Class Diagram
+![Class Diagram](doc/class_diagram.png)
 
-```plantuml
-@startuml
+### 5.2 UML Sequence Diagram
 
-class CuDan {
-  - maCuDan: String
-  - hoTen: String
-  - ngaySinh: String
-  - sdt: String
-  - maCanHo: String
-  + get/set
-  + display(): void
-}
+#### 5.2.1 Chức năng thêm cư dân
+![Sequence Add CuDan](docs/images/sequence_add_cudan.png)
 
-class CanHo {
-  - maCanHo: String
-  - dienTich: double
-  - soPhongNgu: int
-  - tinhTrang: String
-  + get/set
-  + updateTinhTrang(): void
-  + display(): void
-}
+#### 5.2.2 Chức năng xóa căn hộ
+![Sequence Remove CanHo](docs/images/sequence_remove_canho.png)
 
-class TaiKhoan {
-  - username: String
-  - passwordHash: String
-  - role: String
-  + login(): boolean
-  + logout(): void
-  + changePassword(): void
-}
-
-class BanQuanLy {
-  - maNV: String
-  - hoTen: String
-  - chucVu: String
-  - sdt: String
-  + get/set
-  + display(): void
-}
-
-class CuDanService {
-  - danhSach: List<CuDan>
-  + menu(): void
-  + themCuDan(): void
-  + hienThi(): void
-}
-
-class CanHoService {
-  - danhSach: List<CanHo>
-  + menu(): void
-  + themCanHo(): void
-  + timCanHoTrong(): void
-}
-
-class TaiKhoanService {
-  - danhSach: List<TaiKhoan>
-  + menu(): void
-  + dangKy(): void
-  + dangNhap(): void
-}
-
-class BQLService {
-  - danhSach: List<BanQuanLy>
-  + menu(): void
-  + themNhanVien(): void
-  + hienThi(): void
-}
-
-CuDanService "1" *-- "n" CuDan
-CanHoService "1" *-- "n" CanHo
-TaiKhoanService "1" *-- "n" TaiKhoan
-BQLService "1" *-- "n" BanQuanLy
-
-CuDan "n" --> "1" CanHo : sống tại
-TaiKhoan "1" --> "1" CuDan : thuộc về
-
-@enduml
-
-5.2 UML Sequence Diagram
-5.2.1 Chức năng thêm cư dân
-
-@startuml
-actor "Người dùng" as User
-User -> MenuController : chọn "Thêm cư dân"
-MenuController -> CuDanService : gọi themCuDan()
-CuDanService -> CuDan : tạo đối tượng cư dân
-CuDanService -> FileUtil : ghi xuống file cudan.dat
-CuDanService --> MenuController : thông báo thành công
-MenuController --> User : hiển thị kết quả
-@enduml
-
-5.2.2 Chức năng xóa căn hộ
-
-@startuml
-actor "Người dùng" as User
-User -> MenuController : chọn "Xóa căn hộ"
-MenuController -> CanHoService : gọi removeCanHo()
-CanHoService -> FileUtil : cập nhật file canho.dat
-CanHoService --> MenuController : thông báo thành công
-MenuController --> User : hiển thị kết quả
-@enduml
-
-
-5.2.3 Chức năng đăng nhập tài khoản
-
-@startuml
-actor "Người dùng" as User
-User -> MenuController : chọn "Đăng nhập"
-MenuController -> TaiKhoanService : gọi dangNhap(user, pass)
-TaiKhoanService -> PasswordUtil : mã hóa password
-TaiKhoanService -> FileUtil : kiểm tra trong file taikhoan.dat
-TaiKhoanService --> MenuController : kết quả (thành công/thất bại)
-MenuController --> User : hiển thị kết quả
-@enduml
+#### 5.2.3 Chức năng đăng nhập
+![Sequence Login](docs/images/sequence_login.png)
