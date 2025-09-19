@@ -150,7 +150,7 @@ Methods (Phương thức)
 ## 5. Sơ đồ UML
 
 ### 5.1 UML Class Diagram
-![Class Diagram](doc/class_diagram.png)
+![Class Diagram](doc/class diagram.png)
 
 ### 5.2 UML Sequence Diagram
 
