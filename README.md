@@ -155,10 +155,10 @@ Methods (Phương thức)
 ### 5.2 UML Sequence Diagram
 
 #### 5.2.1 Chức năng thêm cư dân
-![Sequence Add CuDan](docs/images/sequence_add_cudan.png)
+![Sequence Add CuDan](doc/cudan.png)
 
 #### 5.2.2 Chức năng xóa căn hộ
-![Sequence Remove CanHo](docs/images/sequence_remove_canho.png)
+![Sequence Remove CanHo](doc/canho.png)
 
 #### 5.2.3 Chức năng đăng nhập
 ![Sequence Login](docs/images/sequence_login.png)
