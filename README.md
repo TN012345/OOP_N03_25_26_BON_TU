@@ -246,14 +246,8 @@ MenuController --> User : hiển thị kết quả
 
 5.2.2 Chức năng xóa căn hộ
 
-@startuml
-actor "Người dùng" as User
-User -> MenuController : chọn "Xóa căn hộ"
-MenuController -> CanHoService : gọi removeCanHo()
-CanHoService -> FileUtil : cập nhật file canho.dat
-CanHoService --> MenuController : thông báo thành công
-MenuController --> User : hiển thị kết quả
-@enduml
+<img width="468" height="277" alt="image" src="https://github.com/user-attachments/assets/70ee427d-83b5-49bc-9241-4533ecc7106a" />
+
 
 5.2.3 Chức năng đăng nhập tài khoản
 
