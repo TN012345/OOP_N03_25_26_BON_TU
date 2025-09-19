@@ -246,9 +246,9 @@ MenuController --> User : hiển thị kết quả
 
 5.2.2 Chức năng xóa căn hộ
 
-<img width="468" height="277" alt="image" src="https://github.com/user-attachments/assets/1f3a1c32-0299-4b57-87e6-b05958ee6387" />
 
 
+<img width="1231" height="727" alt="Untitled" src="https://github.com/user-attachments/assets/9a1b06cb-97a9-4182-9f0e-48c07e8a5be9" />
 
 5.2.3 Chức năng đăng nhập tài khoản
 
