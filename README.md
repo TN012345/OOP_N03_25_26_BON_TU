@@ -161,4 +161,4 @@ Methods (Phương thức)
 ![Sequence Remove CanHo](doc/canho.png)
 
 #### 5.2.3 Chức năng đăng nhập
-![Sequence Login](docs/images/sequence_login.png)
+![Sequence Login](doc/taikhoan.png)
