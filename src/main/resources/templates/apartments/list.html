@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Danh sách căn hộ</title></head>
+<body>
+  <h2>Danh sách căn hộ</h2>
+  <a href="/apartments/new">Thêm căn hộ</a>
+  <table border="1">
+    <tr><th>ID</th><th>Block</th><th>Number</th><th>Floor</th><th>Area</th><th>Hành động</th></tr>
+    <tr th:each="a : ${apartments}">
+      <td th:text="${a.id}">1</td>
+      <td th:text="${a.block}">A</td>
+      <td th:text="${a.number}">101</td>
+      <td th:text="${a.floor}">1</td>
+      <td th:text="${a.area}">45.0</td>
+      <td>
+        <a th:href="@{'/apartments/edit/' + ${a.id}}">Sửa</a>
+        <form th:action="@{'/apartments/delete/' + ${a.id}}" method="post" style="display:inline">
+          <button type="submit">Xóa</button>
+        </form>
+      </td>
+    </tr>
+  </table>
+</body></html>

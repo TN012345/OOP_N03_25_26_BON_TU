@@ -1,0 +1,15 @@
+@startuml
+actor User
+participant Browser
+participant Controller
+participant Repository
+participant Database
+
+User -> Browser: open /apartments
+Browser -> Controller: GET /apartments
+Controller -> Repository: findAll()
+Repository -> Database: SELECT * FROM apartment
+Database --> Repository: results
+Repository --> Controller: list
+Controller --> Browser: render list.html
+@enduml

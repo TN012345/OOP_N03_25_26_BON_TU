@@ -1,0 +1,28 @@
+@startuml
+class Apartment {
+  Long id
+  String block
+  String number
+  Integer floor
+  Double area
+}
+class Resident {
+  Long id
+  String name
+  String phone
+  String email
+}
+class ServiceItem {
+  Long id
+  String name
+  Double price
+}
+class Bill {
+  Long id
+  LocalDate date
+  Double amount
+  String description
+}
+Apartment "1" <-- "0..*" Resident
+Apartment "1" <-- "0..*" Bill
+@enduml
