@@ -2,7 +2,6 @@ package com.phenikaa.quanly.controller;
 
 import com.phenikaa.quanly.model.Resident;
 import com.phenikaa.quanly.repository.ResidentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,8 +10,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/residents")
 public class ResidentController {
 
-    @Autowired
-    private ResidentRepository residentRepository;
+    private final ResidentRepository residentRepository;
+
+    public ResidentController(ResidentRepository residentRepository) {
+        this.residentRepository = residentRepository;
+    }
 
     // Danh sách cư dân
     @GetMapping
@@ -21,32 +23,22 @@ public class ResidentController {
         return "residents/list";
     }
 
-    // Form thêm cư dân
-    @GetMapping("/new")
-    public String showCreateForm(Model model) {
+    // Thêm cư dân
+    @GetMapping("/add")
+    public String showAddForm(Model model) {
         model.addAttribute("resident", new Resident());
-        return "residents/form";
+        return "residents/add";
     }
 
-    // Lưu cư dân
-    @PostMapping
-    public String saveResident(@ModelAttribute Resident resident) {
+    @PostMapping("/add")
+    public String addResident(@ModelAttribute Resident resident) {
         residentRepository.save(resident);
         return "redirect:/residents";
     }
 
-    // Form sửa cư dân
-    @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable("id") Long id, Model model) {
-        Resident resident = residentRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid resident Id:" + id));
-        model.addAttribute("resident", resident);
-        return "residents/form";
-    }
-
     // Xóa cư dân
     @GetMapping("/delete/{id}")
-    public String deleteResident(@PathVariable("id") Long id) {
+    public String deleteResident(@PathVariable Long id) {
         residentRepository.deleteById(id);
         return "redirect:/residents";
     }

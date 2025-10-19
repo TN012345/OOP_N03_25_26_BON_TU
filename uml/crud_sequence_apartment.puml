@@ -1,15 +1,40 @@
-@startuml
-actor User
-participant Browser
-participant Controller
-participant Repository
-participant Database
+@startuml crud_sequence_apartment
+title **Sequence Diagram - Quản lý Căn hộ (CRUD)**
 
-User -> Browser: open /apartments
-Browser -> Controller: GET /apartments
-Controller -> Repository: findAll()
-Repository -> Database: SELECT * FROM apartment
-Database --> Repository: results
-Repository --> Controller: list
-Controller --> Browser: render list.html
+actor "Người dùng" as User
+participant "ApartmentController" as Controller
+participant "ApartmentService" as Service
+participant "ApartmentRepository" as Repo
+database "Database" as DB
+
+== Tạo căn hộ ==
+User -> Controller : POST /apartments
+Controller -> Service : createApartment(data)
+Service -> Repo : save(data)
+Repo -> DB : INSERT Apartment
+DB --> Repo : Success
+Repo --> Service : Apartment created
+Service --> Controller : Response 201
+Controller --> User : Thông báo tạo thành công
+
+== Xem danh sách ==
+User -> Controller : GET /apartments
+Controller -> Service : getAllApartments()
+Service -> Repo : findAll()
+Repo -> DB : SELECT * FROM Apartment
+DB --> Repo : List<Apartment>
+Repo --> Service : List<Apartment>
+Service --> Controller : List<Apartment>
+Controller --> User : Hiển thị danh sách
+
+== Xóa căn hộ ==
+User -> Controller : DELETE /apartments/{id}
+Controller -> Service : deleteApartment(id)
+Service -> Repo : deleteById(id)
+Repo -> DB : DELETE FROM Apartment WHERE id = ?
+DB --> Repo : Success
+Repo --> Service : OK
+Service --> Controller : OK
+Controller --> User : Xóa thành công
+
 @enduml

@@ -1,3 +1,10 @@
 {
-    "cSpell.enabled": false
+    "cSpell.enabled": false,
+
+    "plantuml.exportFormat": "png",
+    "plantuml.exportOnSave": true,
+    "plantuml.diagramsRoot": "uml",
+    "plantuml.server": "",
+    "plantuml.java": "java"
+
 }
