@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa căn hộ</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container mt-4">
+    <h2 class="text-primary mb-3">✏️ Sửa thông tin căn hộ</h2>
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Mã căn hộ</label>
+            <input type="text" class="form-control" value="A101">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Diện tích</label>
+            <input type="number" class="form-control" value="75">
+        </div>
+        <button type="submit" class="btn btn-success">Cập nhật</button>
+        <a th:href="@{/apartments}" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

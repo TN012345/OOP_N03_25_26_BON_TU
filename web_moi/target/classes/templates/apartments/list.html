@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách căn hộ</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container mt-4">
+    <h2 class="text-primary mb-3">🏢 Danh sách căn hộ</h2>
+
+    <div class="mb-3 text-end">
+        <a th:href="@{/apartments/add}" class="btn btn-success">➕ Thêm căn hộ</a>
+    </div>
+
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-primary">
+            <tr>
+                <th>ID</th>
+                <th>Mã căn hộ</th>
+                <th>Diện tích (m²)</th>
+                <th>Chủ hộ</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="a : ${apartments}">
+                <td th:text="${a.id}">1</td>
+                <td th:text="${a.code}">A101</td>
+                <td th:text="${a.area}">70</td>
+                <td th:text="${a.owner}">Nguyễn Văn A</td>
+                <td>
+                    <a th:href="@{'/apartments/edit/' + ${a.id}}" class="btn btn-warning btn-sm">Sửa</a>
+                    <a th:href="@{'/apartments/delete/' + ${a.id}}" class="btn btn-danger btn-sm">Xóa</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<div>
+    <h2 class="text-primary mb-3" th:text="${apartment.id} != null ? 'Cập nhật căn hộ' : 'Thêm căn hộ mới'"></h2>
+
+    <form th:action="@{/apartments/save}" th:object="${apartment}" method="post" class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Mã căn hộ</label>
+            <input type="text" th:field="*{code}" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Tầng</label>
+            <input type="number" th:field="*{floor}" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Diện tích (m²)</label>
+            <input type="number" th:field="*{area}" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Trạng thái</label>
+            <select th:field="*{status}" class="form-select">
+                <option value="Trống">Trống</option>
+                <option value="Đã thuê">Đã thuê</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">💾 Lưu</button>
+            <a th:href="@{/apartments}" class="btn btn-secondary">Hủy</a>
+        </div>
+    </form>
+</div>
+</html>

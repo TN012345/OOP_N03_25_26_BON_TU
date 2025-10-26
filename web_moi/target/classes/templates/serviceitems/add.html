@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm dịch vụ</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container mt-4">
+    <h2 class="text-primary mb-3">🧾 Thêm dịch vụ mới</h2>
+
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Tên dịch vụ</label>
+            <input type="text" class="form-control" placeholder="Nhập tên dịch vụ (VD: Gửi xe, nước, điện...)">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Giá (VNĐ)</label>
+            <input type="number" class="form-control" placeholder="Nhập giá dịch vụ">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Lưu</button>
+        <a th:href="@{/serviceitems}" class="btn btn-secondary">Quay lại</a>
+    </form>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

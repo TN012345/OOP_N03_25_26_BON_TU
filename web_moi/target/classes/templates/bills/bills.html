@@ -1,0 +1,48 @@
+<!-- templates/bills/bills.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý hóa đơn</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            crossorigin="anonymous">
+</head>
+<body class="d-flex flex-column min-vh-100">
+<div th:replace="fragments/header :: header"></div>
+
+<main class="container my-4 flex-grow-1">
+    <h2 class="mb-4 text-primary">💰 Quản lý hóa đơn</h2>
+    <a th:href="@{/bills/add}" class="btn btn-success mb-3">+ Thêm hóa đơn</a>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Căn hộ</th>
+            <th>Tháng</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Hành động</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="bill : ${bills}">
+            <td th:text="${bill.id}"></td>
+            <td th:text="${bill.apartment}"></td>
+            <td th:text="${bill.month}"></td>
+            <td th:text="${bill.total}"></td>
+            <td th:text="${bill.status}"></td>
+            <td>
+                <a th:href="@{'/bills/edit/' + ${bill.id}}" class="btn btn-sm btn-warning">Sửa</a>
+                <a th:href="@{'/bills/delete/' + ${bill.id}}" class="btn btn-sm btn-danger">Xóa</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

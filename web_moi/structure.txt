@@ -1,0 +1,195 @@
+Folder PATH listing for volume Acer
+Volume serial number is 9EFD-C38C
+C:.
+¦   pom.xml
+¦   README.md
+¦   structure.txt
+¦   
++---.vscode
+¦       jsconfig.json
+¦       main.js
+¦       setting.json
+¦       
++---doc
+¦       canho.png
+¦       class.png
+¦       cudan.png
+¦       taikhoan.png
+¦       
++---gs-serving-web-content-main
+¦   ¦   CONTRIBUTING.adoc
+¦   ¦   LICENSE.txt
+¦   ¦   LICENSE.writing.txt
+¦   ¦   README.adoc
+¦   ¦   
+¦   +---complete
+¦   ¦   ¦   build.gradle
+¦   ¦   ¦   gradlew
+¦   ¦   ¦   gradlew.bat
+¦   ¦   ¦   mvnw
+¦   ¦   ¦   mvnw.cmd
+¦   ¦   ¦   pom.xml
+¦   ¦   ¦   settings.gradle
+¦   ¦   ¦   
+¦   ¦   +---gradle
+¦   ¦   ¦   +---wrapper
+¦   ¦   ¦           gradle-wrapper.jar
+¦   ¦   ¦           gradle-wrapper.properties
+¦   ¦   ¦           
+¦   ¦   +---src
+¦   ¦       +---main
+¦   ¦       ¦   +---java
+¦   ¦       ¦   ¦   +---com
+¦   ¦       ¦   ¦       +---example
+¦   ¦       ¦   ¦           +---servingwebcontent
+¦   ¦       ¦   ¦                   GreetingController.java
+¦   ¦       ¦   ¦                   ServingWebContentApplication.java
+¦   ¦       ¦   ¦                   
+¦   ¦       ¦   +---resources
+¦   ¦       ¦       +---static
+¦   ¦       ¦       ¦       index.html
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +---templates
+¦   ¦       ¦               greeting.html
+¦   ¦       ¦               
+¦   ¦       +---test
+¦   ¦           +---java
+¦   ¦               +---com
+¦   ¦                   +---example
+¦   ¦                       +---servingwebcontent
+¦   ¦                               ServingWebContentApplicationTest.java
+¦   ¦                               
+¦   +---initial
+¦       ¦   build.gradle
+¦       ¦   gradlew
+¦       ¦   gradlew.bat
+¦       ¦   mvnw
+¦       ¦   mvnw.cmd
+¦       ¦   pom.xml
+¦       ¦   settings.gradle
+¦       ¦   
+¦       +---gradle
+¦       ¦   +---wrapper
+¦       ¦           gradle-wrapper.jar
+¦       ¦           gradle-wrapper.properties
+¦       ¦           
+¦       +---src
+¦           +---main
+¦           ¦   +---java
+¦           ¦   ¦   +---com
+¦           ¦   ¦       +---example
+¦           ¦   ¦           +---servingwebcontent
+¦           ¦   ¦                   ServingWebContentApplication.java
+¦           ¦   ¦                   
+¦           ¦   +---resources
+¦           ¦           application.properties
+¦           ¦           
+¦           +---test
+¦               +---java
+¦                   +---com
+¦                       +---example
+¦                           +---servingwebcontent
+¦                                   ServingWebContentApplicationTests.java
+¦                                   
++---src
+¦   +---main
+¦       ¦   Main.java
+¦       ¦   
+¦       +---java
+¦       ¦   +---com
+¦       ¦       +---phenikaa
+¦       ¦           +---quanly
+¦       ¦               ¦   QuanLyKhuChungCuApplication.java
+¦       ¦               ¦   
+¦       ¦               +---controller
+¦       ¦               ¦       ApartmentController.java
+¦       ¦               ¦       BillController.java
+¦       ¦               ¦       HomeController.java
+¦       ¦               ¦       ResidentController.java
+¦       ¦               ¦       ServiceItemController.java
+¦       ¦               ¦       
+¦       ¦               +---model
+¦       ¦               ¦       Apartment.java
+¦       ¦               ¦       Bill.java
+¦       ¦               ¦       Resident.java
+¦       ¦               ¦       ServiceItem.java
+¦       ¦               ¦       
+¦       ¦               +---repository
+¦       ¦                       ApartmentRepository.java
+¦       ¦                       BillRepository.java
+¦       ¦                       ResidentRepository.java
+¦       ¦                       ServiceItemRepository.java
+¦       ¦                       
+¦       +---resources
+¦           ¦   application.properties
+¦           ¦   
+¦           +---templates
+¦               ¦   index.html
+¦               ¦   
+¦               +---apartments
+¦               ¦       form.html
+¦               ¦       list.html
+¦               ¦       
+¦               +---residents
+¦                       add.html
+¦                       list.html
+¦                       
++---target
+¦   +---classes
+¦   ¦   ¦   application.properties
+¦   ¦   ¦   
+¦   ¦   +---com
+¦   ¦   ¦   +---phenikaa
+¦   ¦   ¦       +---quanly
+¦   ¦   ¦           ¦   QuanLyKhuChungCuApplication.class
+¦   ¦   ¦           ¦   
+¦   ¦   ¦           +---controller
+¦   ¦   ¦           ¦       ApartmentController.class
+¦   ¦   ¦           ¦       BillController.class
+¦   ¦   ¦           ¦       HomeController.class
+¦   ¦   ¦           ¦       ResidentController.class
+¦   ¦   ¦           ¦       ServiceItemController.class
+¦   ¦   ¦           ¦       
+¦   ¦   ¦           +---model
+¦   ¦   ¦           ¦       Apartment.class
+¦   ¦   ¦           ¦       Bill.class
+¦   ¦   ¦           ¦       Resident.class
+¦   ¦   ¦           ¦       ServiceItem.class
+¦   ¦   ¦           ¦       
+¦   ¦   ¦           +---repository
+¦   ¦   ¦                   ApartmentRepository.class
+¦   ¦   ¦                   BillRepository.class
+¦   ¦   ¦                   ResidentRepository.class
+¦   ¦   ¦                   ServiceItemRepository.class
+¦   ¦   ¦                   
+¦   ¦   +---templates
+¦   ¦       ¦   index.html
+¦   ¦       ¦   
+¦   ¦       +---apartments
+¦   ¦       ¦       form.html
+¦   ¦       ¦       list.html
+¦   ¦       ¦       
+¦   ¦       +---residents
+¦   ¦               add.html
+¦   ¦               list.html
+¦   ¦               
+¦   +---generated-sources
+¦   ¦   +---annotations
+¦   +---generated-test-sources
+¦   ¦   +---test-annotations
+¦   +---maven-status
+¦   ¦   +---maven-compiler-plugin
+¦   ¦       +---compile
+¦   ¦           +---default-compile
+¦   ¦                   createdFiles.lst
+¦   ¦                   inputFiles.lst
+¦   ¦                   
+¦   +---test-classes
++---uml
+        crud_create_apartment.puml
+        crud_delete_apartment.puml
+        crud_read_apartment.puml
+        crud_sequence_apartment.puml
+        crud_update_apartment.puml
+        structural.puml
+        

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa cư dân</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container mt-4">
+    <h2 class="text-primary mb-3">✏️ Sửa thông tin cư dân</h2>
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Họ tên</label>
+            <input type="text" class="form-control" value="Nguyễn Văn A">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Số căn hộ</label>
+            <input type="text" class="form-control" value="A101">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Số điện thoại</label>
+            <input type="text" class="form-control" value="0912345678">
+        </div>
+        <button type="submit" class="btn btn-success">Cập nhật</button>
+        <a th:href="@{/residents}" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>
