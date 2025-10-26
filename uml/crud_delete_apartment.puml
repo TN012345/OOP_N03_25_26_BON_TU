@@ -1,0 +1,19 @@
+@startuml
+title Sequence Diagram - Delete Apartment
+
+actor "User" as U
+participant "Web UI" as UI
+participant "ApartmentController" as C
+participant "ApartmentService" as S
+participant "ApartmentRepository" as R
+
+U -> UI: Chọn căn hộ cần xoá
+UI -> C: DELETE /apartments/{id}
+C -> S: deleteApartment(id)
+S -> R: deleteById(id)
+R --> S: Xoá thành công
+S --> C: success response
+C --> UI: Trả về thông báo xoá thành công
+UI --> U: Hiển thị “Xoá căn hộ thành công”
+
+@enduml

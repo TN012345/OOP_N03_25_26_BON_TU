@@ -1,0 +1,73 @@
+@startuml structural
+title **Sơ đồ lớp - Web Quản Lý Khu Chung Cư**
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam backgroundColor #FFFFFF
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+    FontSize 12
+    FontColor #333333
+}
+
+class Apartment <<Entity>> {
+    - Long id
+    - String block
+    - String number
+    - Integer floor
+    - Double area
+}
+
+class Resident <<Entity>> {
+    - Long id
+    - String name
+    - String phone
+    - String email
+}
+
+class Bill <<Entity>> {
+    - Long id
+    - LocalDate date
+    - Double amount
+    - String description
+}
+
+class ServiceItem <<Entity>> {
+    - Long id
+    - String name
+    - Double price
+}
+
+class ApartmentRepository <<Repository>>
+class ResidentRepository <<Repository>>
+class BillRepository <<Repository>>
+
+class ApartmentService <<Service>>
+class ResidentService <<Service>>
+class BillService <<Service>>
+
+class ApartmentController <<Controller>>
+class ResidentController <<Controller>>
+class BillController <<Controller>>
+
+Resident "1" -- "0..*" Apartment : sống tại >
+Apartment "1" -- "0..*" Bill : có >
+Resident "0..*" -- "0..*" Bill : thanh toán >
+Apartment "1" -- "0..*" ServiceItem : sử dụng >
+
+ApartmentService ..> ApartmentRepository
+ResidentService ..> ResidentRepository
+BillService ..> BillRepository
+
+ApartmentController ..> ApartmentService
+ResidentController ..> ResidentService
+BillController ..> BillService
+
+note top
+  Sơ đồ thể hiện các lớp chính (Model, Repository, Service, Controller)
+  của hệ thống Web Quản Lý Khu Chung Cư.
+end note
+
+@enduml
