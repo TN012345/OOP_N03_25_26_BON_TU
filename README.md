@@ -15,6 +15,7 @@ Mô tả: dự án Spring Boot minh họa quản lý khu chung cư theo yêu c�
 mvn clean install
 
 java -jar target/resident-management-1.0.0.jar
+
 4.database: http://localhost/phpmyadmin/index.php?route=/database/structure&db=resident_management
 5. Mở `http://localhost:8080/` để truy cập.
 
