@@ -1,17 +1,26 @@
 package com.phenikaa.quanly.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
-@Getter @Setter @NoArgsConstructor
+@Table(name = "apartment")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Apartment {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String block;
-    private String number; // apartment number e.g., A-101
-    private Integer floor;
-    private Double area;
+
+    @Column(nullable = false)
+    private int floor;
+
+    @Column(nullable = false)
+    private String number;
+
+    private double area;
 }

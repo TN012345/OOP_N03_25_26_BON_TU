@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm hóa đơn</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container mt-4">
+    <h2 class="text-primary mb-3">💰 Thêm hóa đơn mới</h2>
+
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Mã hóa đơn</label>
+            <input type="text" class="form-control" placeholder="Nhập mã hóa đơn (VD: HD2025-001)">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Căn hộ</label>
+            <select class="form-select">
+                <option selected>-- Chọn căn hộ --</option>
+                <option>A101</option>
+                <option>A102</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Tổng tiền</label>
+            <input type="number" class="form-control" placeholder="Nhập tổng tiền (VNĐ)">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Ngày lập</label>
+            <input type="date" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Lưu</button>
+        <a th:href="@{/bills}" class="btn btn-secondary">Quay lại</a>
+    </form>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

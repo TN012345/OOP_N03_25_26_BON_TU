@@ -6,13 +6,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter @Setter @NoArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@Table(name = "resident") // tên bảng trong MySQL
 public class Resident {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+
+    @Column(nullable = false)
+    private String fullName;
+
     private String phone;
     private String email;
-    @ManyToOne
-    private Apartment apartment;
+
+    @Column(name = "apartment_number")
+    private String apartmentNumber;
 }

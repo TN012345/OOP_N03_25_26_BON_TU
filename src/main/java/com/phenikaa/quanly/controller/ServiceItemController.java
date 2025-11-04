@@ -1,48 +1,31 @@
 package com.phenikaa.quanly.controller;
 
-import com.phenikaa.quanly.model.ServiceItem;
-import com.phenikaa.quanly.repository.ServiceItemRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.ArrayList;
 
 @Controller
 @RequestMapping("/serviceitems")
 public class ServiceItemController {
 
-    @Autowired
-    private ServiceItemRepository serviceItemRepository;
-
     @GetMapping
     public String listServiceItems(Model model) {
-        model.addAttribute("serviceitems", serviceItemRepository.findAll());
-        return "serviceitems/list";
+        model.addAttribute("serviceitems", new ArrayList<>());
+        return "serviceitems/serviceitems";
     }
 
-    @GetMapping("/new")
-    public String showCreateForm(Model model) {
-        model.addAttribute("serviceitem", new ServiceItem());
-        return "serviceitems/form";
-    }
-
-    @PostMapping
-    public String saveServiceItem(@ModelAttribute ServiceItem serviceItem) {
-        serviceItemRepository.save(serviceItem);
-        return "redirect:/serviceitems";
+    @GetMapping("/add")
+    public String addServiceItemForm(Model model) {
+        model.addAttribute("serviceitem", new Object());
+        return "serviceitems/add";
     }
 
     @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable("id") Long id, Model model) {
-        ServiceItem serviceItem = serviceItemRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid service item Id:" + id));
-        model.addAttribute("serviceitem", serviceItem);
-        return "serviceitems/form";
-    }
-
-    @GetMapping("/delete/{id}")
-    public String deleteServiceItem(@PathVariable("id") Long id) {
-        serviceItemRepository.deleteById(id);
-        return "redirect:/serviceitems";
+    public String editServiceItemForm(Model model) {
+        model.addAttribute("serviceitem", new Object());
+        return "serviceitems/edit";
     }
 }
