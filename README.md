@@ -9,13 +9,13 @@ Mô tả: dự án Spring Boot minh họa quản lý khu chung cư theo yêu c�
 - JPA, MySQL, Thymeleaf
 
 ## Hướng dẫn chạy
-1. Cài Java 17, Maven, MySQL.
-2. Tạo database MySQL tên `quanly`.
-3. Cập nhật `src/main/resources/application.properties` với username/password.
-4. Tại thư mục dự án chạy:
-```bash
-mvn spring-boot:run
-```
+1. Cài java 17.x, maven 3.9.x
+2. sql : xampp
+3. lệnh chạy:
+mvn clean install
+
+java -jar target/resident-management-1.0.0.jar
+4.database: http://localhost/phpmyadmin/index.php?route=/database/structure&db=resident_management
 5. Mở `http://localhost:8080/` để truy cập.
 
 ## UML (PlantUML files)
