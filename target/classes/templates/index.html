@@ -1,38 +1,124 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Trang chủ</title>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-          crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Quản lý Cư dân</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
-
-    <!-- ✅ Header -->
-    <div th:replace="fragments/header :: header"></div>
-
-    <!-- ✅ Main Content -->
-    <main class="container my-4 flex-grow-1">
-        <h1 class="mb-4 text-primary">Hệ thống quản lý khu chung cư</h1>
-        <p>Chọn một danh mục bên dưới để bắt đầu:</p>
-
-        <div class="list-group">
-            <a th:href="@{/residents}" class="list-group-item list-group-item-action">👨‍👩‍👧 Quản lý cư dân</a>
-            <a th:href="@{/apartments}" class="list-group-item list-group-item-action">🏢 Quản lý căn hộ</a>
-            <a th:href="@{/bills}" class="list-group-item list-group-item-action">💰 Quản lý hóa đơn</a>
-            <a th:href="@{/serviceitems}" class="list-group-item list-group-item-action">🧾 Quản lý dịch vụ</a>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Quản lý Cư dân</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/residents/page">Cư dân</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/apartments/page">Căn hộ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/management-boards/page">Ban quản lý</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/accounts/page">Tài khoản</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </main>
+    </nav>
 
-    <!-- ✅ Footer -->
-    <div th:replace="fragments/footer :: footer"></div>
+    <!-- Carousel Banner -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-bg bg-primary text-white d-flex align-items-center justify-content-center" style="height: 400px;">
+                    <div class="text-center">
+                        <h1 class="display-4">Quản lý Khu Chung cư</h1>
+                        <p class="lead">Hệ thống quản lý thông tin cư dân, căn hộ, ban quản lý và tài khoản</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-bg bg-success text-white d-flex align-items-center justify-content-center" style="height: 400px;">
+                    <div class="text-center">
+                        <h1 class="display-4">Quản lý Căn hộ</h1>
+                        <p class="lead">Theo dõi và quản lý thông tin căn hộ, tòa nhà, tầng một cách hiệu quả</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-bg bg-info text-white d-flex align-items-center justify-content-center" style="height: 400px;">
+                    <div class="text-center">
+                        <h1 class="display-4">Ban Quản lý</h1>
+                        <p class="lead">Quản lý thông tin ban quản lý và nhân viên</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+    <!-- Features Section -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Cư dân</h3>
+                        <p class="card-text">Quản lý thông tin cư dân: thêm, sửa, xóa và xem chi tiết</p>
+                        <a href="/api/residents/page" class="btn btn-primary">Quản lý Cư dân</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Căn hộ</h3>
+                        <p class="card-text">Quản lý thông tin căn hộ, tòa nhà, tầng và liên kết với cư dân</p>
+                        <a href="/api/apartments/page" class="btn btn-success">Quản lý Căn hộ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Ban quản lý</h3>
+                        <p class="card-text">Quản lý thông tin ban quản lý và nhân viên</p>
+                        <a href="/api/management-boards/page" class="btn btn-info">Quản lý Ban quản lý</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Tài khoản</h3>
+                        <p class="card-text">Quản lý tài khoản đăng nhập của cư dân và ban quản lý</p>
+                        <a href="/api/accounts/page" class="btn btn-warning">Quản lý Tài khoản</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 Hệ thống Quản lý Khu Chung cư</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

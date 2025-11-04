@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Cư dân</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Quản lý Cư dân</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/api/residents/page">Cư dân</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/apartments/page">Căn hộ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/management-boards/page">Ban quản lý</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/accounts/page">Tài khoản</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h2 class="mb-4">Quản lý Cư dân</h2>
+        
+        <!-- Form Container -->
+        <div class="form-container">
+            <h4 id="formTitle">Thêm Cư dân Mới</h4>
+            <form id="residentForm">
+                <input type="hidden" id="residentId">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="fullName" class="form-label">Họ và tên *</label>
+                        <input type="text" class="form-control" id="fullName" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="citizenId" class="form-label">CMND/CCCD</label>
+                        <input type="text" class="form-control" id="citizenId">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="dateOfBirth" class="form-label">Ngày sinh *</label>
+                        <input type="date" class="form-control" id="dateOfBirth" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="gender" class="form-label">Giới tính</label>
+                        <select class="form-select" id="gender">
+                            <option value="">Chọn giới tính</option>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                            <option value="Khác">Khác</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="apartmentId" class="form-label">Căn hộ</label>
+                        <select class="form-select" id="apartmentId">
+                            <option value="">Chọn căn hộ</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="phoneNumber" class="form-label">Số điện thoại</label>
+                        <input type="tel" class="form-control" id="phoneNumber">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Lưu</button>
+                <button type="button" class="btn btn-secondary" id="resetBtn">Đặt lại</button>
+            </form>
+        </div>
+
+        <!-- Alert -->
+        <div id="alertContainer"></div>
+
+        <!-- Table -->
+        <div class="card">
+            <div class="card-header">
+                <h5>Danh sách Cư dân</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Họ và tên</th>
+                                <th>CMND/CCCD</th>
+                                <th>Ngày sinh</th>
+                                <th>Giới tính</th>
+                                <th>Email</th>
+                                <th>SĐT</th>
+                                <th>Căn hộ</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="residentTableBody">
+                            <tr>
+                                <td colspan="9" class="text-center">Đang tải dữ liệu...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/resident.js"></script>
+</body>
+</html>

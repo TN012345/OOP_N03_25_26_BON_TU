@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Căn hộ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Quản lý Khu Chung cư</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/api/residents/page">Cư dân</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/api/apartments/page">Căn hộ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/api/management-boards/page">Ban quản lý</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/api/accounts/page">Tài khoản</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h2 class="mb-4">Quản lý Căn hộ</h2>
+        
+        <div class="form-container">
+            <h4 id="formTitle">Thêm Căn hộ Mới</h4>
+            <form id="apartmentForm">
+                <input type="hidden" id="apartmentId">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="apartmentNumber" class="form-label">Số căn hộ *</label>
+                        <input type="text" class="form-control" id="apartmentNumber" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="building" class="form-label">Tòa nhà *</label>
+                        <input type="text" class="form-control" id="building" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="floor" class="form-label">Tầng *</label>
+                        <input type="number" class="form-control" id="floor" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="area" class="form-label">Diện tích (m²) *</label>
+                        <input type="number" step="0.01" class="form-control" id="area" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="type" class="form-label">Loại căn hộ</label>
+                        <select class="form-select" id="type">
+                            <option value="">Chọn loại</option>
+                            <option value="Studio">Studio</option>
+                            <option value="1PN">1 Phòng ngủ</option>
+                            <option value="2PN">2 Phòng ngủ</option>
+                            <option value="3PN">3 Phòng ngủ</option>
+                            <option value="4PN">4 Phòng ngủ</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="price" class="form-label">Giá (VNĐ) *</label>
+                        <input type="number" step="0.01" class="form-control" id="price" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="ownerName" class="form-label">Tên chủ sở hữu</label>
+                        <input type="text" class="form-control" id="ownerName">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="ownerPhone" class="form-label">SĐT chủ sở hữu</label>
+                        <input type="tel" class="form-control" id="ownerPhone">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="status" class="form-label">Trạng thái</label>
+                        <select class="form-select" id="status">
+                            <option value="Trống">Trống</option>
+                            <option value="Đã bán">Đã bán</option>
+                            <option value="Đang cho thuê">Đang cho thuê</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Lưu</button>
+                <button type="button" class="btn btn-secondary" id="resetBtn">Đặt lại</button>
+            </form>
+        </div>
+
+        <div id="alertContainer"></div>
+
+        <div class="card">
+            <div class="card-header"><h5>Danh sách Căn hộ</h5></div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th><th>Số căn hộ</th><th>Tòa nhà</th><th>Tầng</th>
+                                <th>Diện tích</th><th>Loại</th><th>Giá</th><th>Chủ sở hữu</th><th>Trạng thái</th><th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="apartmentTableBody">
+                            <tr><td colspan="10" class="text-center">Đang tải dữ liệu...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/apartment.js"></script>
+</body>
+</html>
