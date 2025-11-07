@@ -189,4 +189,3 @@ Methods (Phương thức)
 
 #### 5.2.3 Chức năng đăng nhập
 ![Sequence Login](doc/taikhoan.png)
->>>>>>> 200f4a4e6c0fe3d475673df57c6f9aeebc1e0b83
