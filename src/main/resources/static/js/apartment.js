@@ -36,7 +36,7 @@ async function loadApartments() {
                 <td>${apt.floor || ''}</td>
                 <td>${apt.area ? apt.area + ' m²' : ''}</td>
                 <td>${apt.type || ''}</td>
-                <td>${apt.price ? new Intl.NumberFormat('vi-VN').format(apt.price) + ' VNĐ' : ''}</td>
+                <td>${apt.price ? new Intl.NumberFormat('vi-VN').format(apt.price) + ' USD' : ''}</td>
                 <td>${apt.ownerName || ''}</td>
                 <td><span class="badge bg-${apt.status === 'Trống' ? 'warning' : apt.status === 'Đã bán' ? 'success' : 'info'}">${apt.status || ''}</span></td>
                 <td>
