@@ -17,7 +17,7 @@ Mô tả: dự án Spring Boot minh họa quản lý khu chung cư theo yêu c�
 mvn clean install
 
 java -jar target/resident-management-1.0.0.jar
->>>>>>> c0f1720abfc7459201ae6eb86771e058d0356a13
+
 
 4.database: http://localhost/phpmyadmin/index.php?route=/database/structure&db=resident_management
 
